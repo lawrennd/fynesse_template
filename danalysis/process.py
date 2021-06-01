@@ -1,4 +1,18 @@
-# This file processes the data
+# This file analyzes the data
 
-"""2. Ensure that date formats are correct.
-3. Ensure that missing values are recognised and their symbolic encoding recorded."""
+"""# Here are some of the imports we might expect 
+import sklearn.model_selection  as ms
+import sklearn.linear_model as lm
+import sklearn.svm as svm
+import sklearn.naive_bayes as naive_bayes
+import sklearn.tree as tree
+
+import GPy
+import torch
+import tensorflow as tf
+
+# Or if it's a statistical analysis
+import scipy.stats"""
+
+"""Answer a particular question that arises from the data"""
+

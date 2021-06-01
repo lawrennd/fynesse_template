@@ -30,3 +30,6 @@ if config=={}:
         + "."
     )
 
+for key, item in config.items():
+    if item is str:
+        config[key] = os.path.expandvars(item)
