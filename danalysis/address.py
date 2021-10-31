@@ -1,4 +1,4 @@
-# This file analyzes the data
+# This file contains code for suporting addressing questions in the data
 
 """# Here are some of the imports we might expect 
 import sklearn.model_selection  as ms
@@ -14,5 +14,5 @@ import tensorflow as tf
 # Or if it's a statistical analysis
 import scipy.stats"""
 
-"""Answer a particular question that arises from the data"""
+"""Address a particular question that arises from the data"""
 
