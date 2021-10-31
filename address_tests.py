@@ -2,4 +2,4 @@
 
 import nose, warnings
 
-nose.main("danalysis", defaultTest="danalysis/tests/address", argv=["", ""])
+nose.main("fynesse", defaultTest="fynesse/tests/address", argv=["", ""])
