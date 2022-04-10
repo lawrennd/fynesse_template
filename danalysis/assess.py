@@ -5,6 +5,7 @@ import .access
 """These are the types of import we might expect in this file
 import pandas
 import bokeh
+import seaborn
 import matplotlib.pyplot as plt
 import sklearn.decomposition as decomposition
 import sklearn.feature_extraction"""

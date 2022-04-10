@@ -3,6 +3,7 @@ from .config import *
 """These are the types of import we might expect in this file
 import httplib2
 import oauth2
+import tables
 import mongodb
 import sqlite"""
 
