@@ -1,10 +1,75 @@
 # Fynesse Template
 
-This repo provides a python template repo for doing data analysis according to the Fynesse framework.
+This repo provides a Python template for data analysis according to the Fynesse framework. The template uses Poetry for dependency management, pytest for testing, and looks to follows current Python development best practices.
+
+## Quick Start
+
+### Prerequisites
+- Python 3.9 or higher
+- Poetry (install via `curl -sSL https://install.python-poetry.org | python3 -`)
+
+### Installation
+```bash
+# Clone the repository
+git clone <repository-url>
+cd fynesse_template
+
+# Install dependencies with Poetry
+poetry install
+
+# Activate the virtual environment
+poetry shell
+
+# Run tests to verify installation
+poetry run pytest
+```
+
+### Development Workflow
+```bash
+# Install development dependencies
+poetry install --with dev
+
+# Run tests
+poetry run pytest
+
+# Format code
+poetry run black fynesse/
+
+# Type checking
+poetry run mypy fynesse/
+
+# Linting
+poetry run flake8 fynesse/
+```
 
 One challenge for data science and data science processes is that they do not always accommodate the real-time and evolving nature of data science advice as required, for example in pandemic response or in managing an international supply chain. The Fynesse paradigm is inspired by experience in operational data science both in the Amazon supply chain and in the UK Covid-19 pandemic response.
 
-The Fynesse paradigm considers three aspects to data analysis, Access, Assess, Address. 
+The Fynesse paradigm considers three aspects to data analysis, Access, Assess, Address.
+
+## Framework Structure
+
+The template provides a structured approach to implementing the Fynesse framework:
+
+```
+fynesse/
+├── access.py      # Data access functionality
+├── assess.py      # Data assessment and quality checks
+├── address.py     # Question addressing and analysis
+├── config.py      # Configuration management
+├── defaults.yml   # Default configuration values
+└── tests/         # Comprehensive test suite
+    ├── test_access.py
+    ├── test_assess.py
+    └── test_address.py
+```
+
+## Modern Development Features
+
+- **Poetry Dependency Management**: Modern Python packaging with `pyproject.toml` and `poetry.lock`
+- **Comprehensive Testing**: 43 test stubs with pytest and coverage reporting
+- **Code Quality Tools**: Black formatting, mypy type checking, flake8 linting
+- **Virtual Environment**: Isolated development environment with Poetry
+- **Documentation**: Enhanced docstrings and module documentation 
 
 ## Access
 
@@ -25,3 +90,53 @@ Data that is accessible can be imported (via APIs or database calls or reading a
 ## Address
 
 The final aspect of the process is to *address* the question. We'll spend the least time on this aspect here, because it's the one that is most widely formally taught and the one that most researchers are familiar with. In statistics, this might involve some confirmatory data analysis. In machine learning it may involve designing a predictive model. In many domains it will involve figuring out how best to visualise the data to present it to those who need to make the decisions. That could involve a dashboard, a plot or even summarisation in an Excel spreadsheet.
+
+## Using the Framework
+
+### Template Implementation
+The framework is provided as a template with stub implementations. Each module contains:
+
+- **`access.py`**: Implement the `data()` function to load your data sources
+- **`assess.py`**: Implement data quality assessment functions (`data()`, `query()`, `view()`, `labelled()`)
+- **`address.py`**: Implement analysis and question-addressing functionality
+
+### Configuration
+- Edit `fynesse/defaults.yml` for default configuration values
+- Create `fynesse/machine.yml` for machine-specific settings
+- Use `_config.yml` for project-specific configuration
+
+### Testing
+The template includes comprehensive test stubs:
+```bash
+# Run all tests
+poetry run pytest
+
+# Run specific module tests
+poetry run pytest fynesse/tests/test_access.py
+
+# Run with coverage
+poetry run pytest --cov=fynesse
+```
+
+## Contributing
+
+### Development Setup
+1. Fork the repository
+2. Install Poetry: `curl -sSL https://install.python-poetry.org | python3 -`
+3. Install dependencies: `poetry install --with dev`
+4. Create a feature branch: `git checkout -b feature/your-feature`
+
+### Code Quality
+- All code must pass tests: `poetry run pytest`
+- Code must be formatted: `poetry run black fynesse/`
+- Type checking must pass: `poetry run mypy fynesse/`
+- Linting must pass: `poetry run flake8 fynesse/`
+
+### Commit Guidelines
+- Use conventional commit messages
+- Include tests for new functionality
+- Update documentation as needed
+
+## License
+
+MIT License - see LICENSE file for details.
