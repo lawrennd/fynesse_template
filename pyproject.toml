@@ -1,19 +1,11 @@
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "fynesse"
 version = "0.1.0"
 description = "Template files for performing fynesse pipeline data analysis with python."
+authors = ["Firstname Lastname <emal@domain.here>"]
+maintainers = ["Firstname Lastname <emal@domain.here>"]
 readme = "README.md"
-license = {text = "MIT"}
-authors = [
-    {name = "Neil D. Lawrence", email = "emal@domain.here"}
-]
-maintainers = [
-    {name = "Neil D. Lawrence", email = "emal@domain.here"}
-]
+license = "MIT"
 keywords = ["data-science", "analysis", "framework", "access", "assess", "address"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -22,7 +14,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
+
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -30,40 +22,32 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-requires-python = ">=3.8"
-dependencies = [
-    "pandas>=2.0.0",
-    "numpy>=1.24.0",
-    "jupyter>=1.0.0",
-    "matplotlib>=3.7.0",
-    "PyYAML>=6.0.0",
-]
+packages = [{include = "fynesse"}]
+include = ["fynesse/defaults.yml"]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=8.0.0",
-    "pytest-cov>=6.0.0",
-    "black>=23.0.0",
-    "flake8>=6.0.0",
-    "mypy>=1.0.0",
-]
-interactive = [
-    "bokeh>=3.0.0",
-]
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.0.0"
+numpy = "^1.24.0"
+jupyter = "^1.0.0"
+matplotlib = "^3.7.0"
+PyYAML = "^6.0.0"
 
-[project.urls]
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-cov = "^6.0.0"
+black = "^23.0.0"
+flake8 = "^6.0.0"
+mypy = "^1.0.0"
+
+[tool.poetry.group.interactive.dependencies]
+bokeh = "^3.0.0"
+
+[tool.poetry.urls]
 Homepage = "https://github.com/lawrennd/fynesse_template"
 Repository = "https://github.com/lawrennd/fynesse_template"
 Documentation = "https://github.com/lawrennd/fynesse_template#readme"
 Issues = "https://github.com/lawrennd/fynesse_template/issues"
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["fynesse*"]
-exclude = ["tests*", "*.tests*"]
-
-[tool.setuptools.package-data]
-fynesse = ["defaults.yml"]
 
 [tool.pytest.ini_options]
 testpaths = ["fynesse/tests"]
