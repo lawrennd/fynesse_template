@@ -15,16 +15,16 @@ from fynesse import address
 class TestAddressModule:
     """Test suite for the address module."""
 
-    def test_address_module_imports(self):
+    def test_address_module_imports(self) -> None:
         """Test that the address module can be imported successfully."""
         assert address is not None
 
-    def test_address_module_structure(self):
+    def test_address_module_structure(self) -> None:
         """Test that the address module has the expected structure."""
         # Currently the address module is mostly empty, so we test basic import
         assert address is not None
 
-    def test_address_documentation(self):
+    def test_address_documentation(self) -> None:
         """Test that the address module has proper documentation."""
         # Check module docstring
         assert address.__doc__ is not None, "Address module should have docstring"
