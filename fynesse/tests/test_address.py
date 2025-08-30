@@ -36,17 +36,17 @@ class TestAddressModule:
 class TestAddressStatisticalAnalysis:
     """Test suite for statistical analysis functionality."""
 
-    def test_confirmatory_data_analysis(self):
+    def test_confirmatory_data_analysis(self) -> None:
         """Test confirmatory data analysis capabilities."""
         # Template test - would test actual statistical analysis in real implementation
         pass
 
-    def test_hypothesis_testing(self):
+    def test_hypothesis_testing(self) -> None:
         """Test hypothesis testing functionality."""
         # Template test - would test actual hypothesis testing in real implementation
         pass
 
-    def test_regression_analysis(self):
+    def test_regression_analysis(self) -> None:
         """Test regression analysis capabilities."""
         # Template test - would test actual regression analysis in real implementation
         pass
@@ -55,22 +55,22 @@ class TestAddressStatisticalAnalysis:
 class TestAddressPredictiveModeling:
     """Test suite for predictive modeling functionality."""
 
-    def test_model_selection(self):
+    def test_model_selection(self) -> None:
         """Test model selection capabilities."""
         # Template test - would test actual model selection in real implementation
         pass
 
-    def test_model_training(self):
+    def test_model_training(self) -> None:
         """Test model training functionality."""
         # Template test - would test actual model training in real implementation
         pass
 
-    def test_model_evaluation(self):
+    def test_model_evaluation(self) -> None:
         """Test model evaluation capabilities."""
         # Template test - would test actual model evaluation in real implementation
         pass
 
-    def test_prediction_generation(self):
+    def test_prediction_generation(self) -> None:
         """Test prediction generation functionality."""
         # Template test - would test actual prediction generation in real implementation
         pass
@@ -79,17 +79,17 @@ class TestAddressPredictiveModeling:
 class TestAddressVisualization:
     """Test suite for decision-making visualization functionality."""
 
-    def test_dashboard_creation(self):
+    def test_dashboard_creation(self) -> None:
         """Test dashboard creation capabilities."""
         # Template test - would test actual dashboard creation in real implementation
         pass
 
-    def test_decision_plots(self):
+    def test_decision_plots(self) -> None:
         """Test creation of plots for decision-making."""
         # Template test - would test actual decision plot creation in real implementation
         pass
 
-    def test_summary_visualizations(self):
+    def test_summary_visualizations(self) -> None:
         """Test creation of summary visualizations."""
         # Template test - would test actual summary visualization creation in real implementation
         pass
@@ -98,17 +98,17 @@ class TestAddressVisualization:
 class TestAddressDataExport:
     """Test suite for data export functionality."""
 
-    def test_excel_export(self):
+    def test_excel_export(self) -> None:
         """Test Excel spreadsheet export capabilities."""
         # Template test - would test actual Excel export in real implementation
         pass
 
-    def test_report_generation(self):
+    def test_report_generation(self) -> None:
         """Test report generation functionality."""
         # Template test - would test actual report generation in real implementation
         pass
 
-    def test_data_summarization(self):
+    def test_data_summarization(self) -> None:
         """Test data summarization capabilities."""
         # Template test - would test actual data summarization in real implementation
         pass
@@ -117,17 +117,17 @@ class TestAddressDataExport:
 class TestAddressIntegration:
     """Test suite for integration with access and assess modules."""
 
-    def test_data_flow_from_assess(self):
+    def test_data_flow_from_assess(self) -> None:
         """Test data flow from assess module to address module."""
         # Template test - would test actual data flow in real implementation
         pass
 
-    def test_question_formulation(self):
+    def test_question_formulation(self) -> None:
         """Test question formulation based on assessed data."""
         # Template test - would test actual question formulation in real implementation
         pass
 
-    def test_result_communication(self):
+    def test_result_communication(self) -> None:
         """Test communication of results to stakeholders."""
         # Template test - would test actual result communication in real implementation
         pass
