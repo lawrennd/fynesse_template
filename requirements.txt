@@ -1,0 +1,15 @@
+# Core dependencies for fynesse framework
+pandas>=2.0.0
+numpy>=1.24.0
+jupyter>=1.0.0
+matplotlib>=3.7.0
+
+# Testing dependencies
+pytest>=8.0.0
+pytest-cov>=6.0.0
+
+# Configuration
+PyYAML>=6.0.0
+
+# Optional dependencies for interactive plots
+# bokeh>=3.0.0
