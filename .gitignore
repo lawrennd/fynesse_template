@@ -1,0 +1,195 @@
+
+# VibeSafe System Files (Auto-added during installation)
+# These are VibeSafe infrastructure - not your project content
+
+# Backlog system files
+backlog/README.md
+backlog/task_template.md
+backlog/update_index.py
+backlog/index.md
+
+# CIP system files  
+cip/README.md
+cip/cip_template.md
+
+# Cursor AI rules (VibeSafe-managed)
+.cursor/rules/
+# Generated project tenet cursor rules
+.cursor/rules/project_tenet_*.mdc
+
+# VibeSafe scripts and tools
+scripts/whats_next.py
+install-whats-next.sh
+whats-next
+
+# VibeSafe templates directory
+templates/
+
+# AI-Requirements framework (VibeSafe-managed)
+ai-requirements/README.md
+ai-requirements/requirement_template.md
+ai-requirements/prompts/
+ai-requirements/patterns/
+ai-requirements/integrations/
+ai-requirements/examples/
+ai-requirements/guidance/
+
+# Tenets system files
+tenets/README.md
+tenets/tenet_template.md
+tenets/combine_tenets.py
+
+# VibeSafe documentation (system files)
+docs/whats_next_script.md
+docs/yaml_frontmatter_examples.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+# poetry.lock  # Keep this for reproducible builds
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+*.code-workspace~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
