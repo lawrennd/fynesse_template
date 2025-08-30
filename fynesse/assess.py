@@ -1,8 +1,12 @@
 from typing import Any, Union
 import pandas as pd
+import logging
 
 from .config import *
 from . import access
+
+# Set up logging
+logger = logging.getLogger(__name__)
 
 """These are the types of import we might expect in this file
 import pandas
@@ -16,9 +20,76 @@ import sklearn.feature_extraction"""
 
 
 def data() -> Union[pd.DataFrame, Any]:
-    """Load the data from access and ensure missing values are correctly encoded as well as indices correct, column names informative, date and times correctly formatted. Return a structured data structure such as a data frame."""
+    """
+    Load the data from access and ensure missing values are correctly encoded as well as indices correct, column names informative, date and times correctly formatted. Return a structured data structure such as a data frame.
+    
+    IMPLEMENTATION GUIDE FOR STUDENTS:
+    ==================================
+    
+    1. REPLACE THIS FUNCTION WITH YOUR DATA ASSESSMENT CODE:
+       - Load data using the access module
+       - Check for missing values and handle them appropriately
+       - Validate data types and formats
+       - Clean and prepare data for analysis
+    
+    2. ADD ERROR HANDLING:
+       - Handle cases where access.data() returns None
+       - Check for data quality issues
+       - Validate data structure and content
+    
+    3. ADD BASIC LOGGING:
+       - Log data quality issues found
+       - Log cleaning operations performed
+       - Log final data summary
+    
+    4. EXAMPLE IMPLEMENTATION:
+       df = access.data()
+       if df is None:
+           print("Error: No data available from access module")
+           return None
+       
+       print(f"Assessing data quality for {len(df)} rows...")
+       # Your data assessment code here
+       return df
+    """
+    logger.info("Starting data assessment")
+    
+    # Load data from access module
     df = access.data()
-    raise NotImplementedError
+    
+    # Check if data was loaded successfully
+    if df is None:
+        logger.error("No data available from access module")
+        print("Error: Could not load data from access module")
+        return None
+    
+    logger.info(f"Assessing data quality for {len(df)} rows, {len(df.columns)} columns")
+    
+    try:
+        # STUDENT IMPLEMENTATION: Add your data assessment code here
+        
+        # Example: Check for missing values
+        missing_counts = df.isnull().sum()
+        if missing_counts.sum() > 0:
+            logger.info(f"Found missing values: {missing_counts.to_dict()}")
+            print(f"Missing values found: {missing_counts.sum()} total")
+        
+        # Example: Check data types
+        logger.info(f"Data types: {df.dtypes.to_dict()}")
+        
+        # Example: Basic data cleaning (students should customize this)
+        # Remove completely empty rows
+        df_cleaned = df.dropna(how='all')
+        if len(df_cleaned) < len(df):
+            logger.info(f"Removed {len(df) - len(df_cleaned)} completely empty rows")
+        
+        logger.info(f"Data assessment completed. Final shape: {df_cleaned.shape}")
+        return df_cleaned
+        
+    except Exception as e:
+        logger.error(f"Error during data assessment: {e}")
+        print(f"Error assessing data: {e}")
+        return None
 
 
 def query(data: Union[pd.DataFrame, Any]) -> str:

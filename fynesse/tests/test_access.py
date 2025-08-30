@@ -23,10 +23,11 @@ class TestAccessModule:
         """Test that the data function exists and is callable."""
         assert callable(access.data)
 
-    def test_data_function_raises_not_implemented(self) -> None:
-        """Test that data function raises NotImplementedError as expected for template."""
-        with pytest.raises(NotImplementedError):
-            access.data()
+    def test_data_function_handles_errors(self) -> None:
+        """Test that data function handles errors gracefully."""
+        result = access.data()
+        # Should return None when data file is not found
+        assert result is None
 
     def test_access_module_structure(self) -> None:
         """Test that the access module has the expected structure."""

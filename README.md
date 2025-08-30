@@ -158,6 +158,35 @@ The framework is provided as a template with stub implementations. Each module c
 - *`assess.py`*: Implement data quality assessment functions (`data()`, `query()`, `view()`, `labelled()`)
 - *`address.py`*: Implement analysis and question-addressing functionality
 
+### Error Handling and Logging
+
+The framework includes basic error handling and logging to help you debug issues:
+
+**Basic Error Handling:**
+```python
+try:
+    df = pd.read_csv('data.csv')
+    print(f"Loaded {len(df)} rows of data")
+except FileNotFoundError:
+    print("Error: Could not find data.csv file")
+    return None
+```
+
+**Simple Logging:**
+```python
+import logging
+logger = logging.getLogger(__name__)
+logger.info("Starting data analysis")
+logger.error("Failed to load data")
+```
+
+**Key Principles:**
+- Use try/except blocks for operations that might fail
+- Provide helpful error messages for debugging
+- Log important events and errors
+- Check data validity before processing
+- Handle edge cases (empty data, missing files, etc.)
+
 ### Configuration
 - Edit `fynesse/defaults.yml` for default configuration values
 - Create `fynesse/machine.yml` for machine-specific settings
