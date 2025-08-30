@@ -1,8 +1,45 @@
 # Fynesse Template
 
-This repo provides a Python template for data analysis according to the Fynesse framework. The template uses Poetry for dependency management, pytest for testing, and looks to follows current Python development best practices.
+This is a *GitHub template repository* for data analysis projects using the Fynesse framework. The template uses Poetry for dependency management, pytest for testing, and follows current Python development best practices.
 
-## Quick Start
+## What is a GitHub Template?
+
+A GitHub template repository allows you to quickly create new repositories with the same structure and files. When you use this template, you'll get a complete project setup with:
+
+- Modern Python development environment (Poetry)
+- Comprehensive testing framework (pytest)
+- Code quality tools (black, mypy, flake8)
+- Fynesse framework structure ready for implementation
+- Documentation and examples
+
+## How to Use This Template
+
+### Option 1: Use the "Use this template" Button (Recommended)
+
+1. *Click the green "Use this template" button* at the top of this repository
+2. *Choose "Create a new repository"*
+3. *Name your new repository* (e.g., "my-data-analysis-project")
+4. *Select visibility* (public or private)
+5. *Click "Create repository from template"*
+
+Your new repository will be created with all the template files, and you can start working immediately!
+
+### Option 2: Clone and Customize
+
+```bash
+# Clone the template
+git clone https://github.com/lawrennd/fynesse_template.git my-project-name
+cd my-project-name
+
+# Remove the template's git history and start fresh
+rm -rf .git
+git init
+
+# Add your new remote repository
+git remote add origin https://github.com/yourusername/my-project-name.git
+```
+
+## Quick Start (After Using Template)
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -10,9 +47,8 @@ This repo provides a Python template for data analysis according to the Fynesse 
 
 ### Installation
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd fynesse_template
+# After creating your repository from the template:
+cd your-new-project-name
 
 # Install dependencies with Poetry
 poetry install
@@ -42,6 +78,28 @@ poetry run mypy fynesse/
 poetry run flake8 fynesse/
 ```
 
+### Next Steps After Setup
+
+1. *Update project metadata* in `pyproject.toml`:
+   - Change the project name and description
+   - Update author information
+   - Modify the repository URLs
+
+2. *Customize the framework*:
+   - Implement your data access logic in `fynesse/access.py`
+   - Add data assessment functions in `fynesse/assess.py`
+   - Create analysis functions in `fynesse/address.py`
+
+3. *Configure your environment*:
+   - Edit `fynesse/defaults.yml` for your data sources
+   - Create `fynesse/machine.yml` for local settings
+   - Add your data files to the project
+
+4. *Start development*:
+   - Write your first test
+   - Implement your data pipeline
+   - Document your analysis process
+
 One challenge for data science and data science processes is that they do not always accommodate the real-time and evolving nature of data science advice as required, for example in pandemic response or in managing an international supply chain. The Fynesse paradigm is inspired by experience in operational data science both in the Amazon supply chain and in the UK Covid-19 pandemic response.
 
 The Fynesse paradigm considers three aspects to data analysis, Access, Assess, Address.
@@ -65,11 +123,11 @@ fynesse/
 
 ## Modern Development Features
 
-- **Poetry Dependency Management**: Modern Python packaging with `pyproject.toml` and `poetry.lock`
-- **Comprehensive Testing**: 43 test stubs with pytest and coverage reporting
-- **Code Quality Tools**: Black formatting, mypy type checking, flake8 linting
-- **Virtual Environment**: Isolated development environment with Poetry
-- **Documentation**: Enhanced docstrings and module documentation 
+- *Poetry Dependency Management*: Modern Python packaging with `pyproject.toml` and `poetry.lock`
+- *Comprehensive Testing*: 43 test stubs with pytest and coverage reporting
+- *Code Quality Tools*: Black formatting, mypy type checking, flake8 linting
+- *Virtual Environment*: Isolated development environment with Poetry
+- *Documentation*: Enhanced docstrings and module documentation 
 
 ## Access
 
@@ -96,9 +154,9 @@ The final aspect of the process is to *address* the question. We'll spend the le
 ### Template Implementation
 The framework is provided as a template with stub implementations. Each module contains:
 
-- **`access.py`**: Implement the `data()` function to load your data sources
-- **`assess.py`**: Implement data quality assessment functions (`data()`, `query()`, `view()`, `labelled()`)
-- **`address.py`**: Implement analysis and question-addressing functionality
+- *`access.py`*: Implement the `data()` function to load your data sources
+- *`assess.py`*: Implement data quality assessment functions (`data()`, `query()`, `view()`, `labelled()`)
+- *`address.py`*: Implement analysis and question-addressing functionality
 
 ### Configuration
 - Edit `fynesse/defaults.yml` for default configuration values
