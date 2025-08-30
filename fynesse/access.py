@@ -21,6 +21,9 @@ from .config import *
 # import sqlite
 
 
-def data():
+from typing import Any, Union
+import pandas as pd
+
+def data() -> Union[pd.DataFrame, Any]:
     """Read the data from the web or local file, returning structured format such as a data frame"""
     raise NotImplementedError
