@@ -126,3 +126,66 @@ def data() -> Union[pd.DataFrame, None]:
         logger.error(f"Unexpected error loading data: {e}")
         print(f"Error loading data: {e}")
         return None
+
+%%writefile fynesse/assess.py
+
+import osmnx as ox
+import pandas as pd
+
+def get_feature_vector(latitude, longitude, box_size_km=2, features=None, as_dataframe=False):
+    """
+    Given a central point (latitude, longitude) and a bounding box size,
+    query OpenStreetMap via OSMnx and return a feature vector.
+    """
+    if features is None:
+        raise ValueError("You must pass a features list of (key, value) pairs.")
+
+    # Convert km to degrees (approx, valid for small areas)
+    delta = box_size_km / 111.0
+    north = latitude + delta
+    south = latitude - delta
+    east = longitude + delta
+    west = longitude - delta
+    bbox = (west, south, east, north)
+
+    # Collect unique keys for OSM query
+    keys = set([k for k, v in features])
+    tags = {key: True for key in keys}
+
+    try:
+        pois = ox.features_from_bbox(bbox, tags=tags)
+    except Exception:
+        pois = pd.DataFrame()  
+
+    feature_vector = {}
+    for key, value in features:
+        if key in pois.columns:
+            if value:
+                feature_vector[f"{key}:{value}"] = int((pois[key] == value).sum())
+            else:
+                feature_vector[key] = int(pois[key].notnull().sum())
+        else:
+            feature_vector[f"{key}:{value}" if value else key] = 0
+
+    if as_dataframe:
+        return pd.DataFrame(list(feature_vector.items()), columns=["POI Type", "Count"])
+    else:
+        return feature_vector
+
+features = [
+    ("building", None),
+    ("amenity", None),
+    ("amenity", "school"),
+    ("amenity", "hospital"),
+    ("amenity", "restaurant"),
+    ("amenity", "cafe"),
+    ("shop", None),
+    ("tourism", None),
+    ("tourism", "hotel"),
+    ("tourism", "museum"),
+    ("leisure", None),
+    ("leisure", "park"),
+    ("historic", None),
+    ("amenity", "place_of_worship"),
+]
+
